@@ -1,0 +1,9 @@
+supervisor
+tornado
+redis
+pymongo==3.6
+requests
+networkx
+jsonpath
+jsonpath-rw
+
