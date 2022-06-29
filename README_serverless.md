@@ -10,6 +10,7 @@ http:/localhost:8070
 - 2. 输入函数名 Name
 - 3. 选择Runtime
 - 4. CREATE
+
 ![x](./images/CreateFunction.png)
 
 3. 进入如下页面
@@ -25,4 +26,5 @@ http:/localhost:8070
 - 3. 测试，按下图选择JSON传参，抄上参数，点击 TEST
 - 4. OK，可以开始进入xxsoar之旅
 - 5. 福利，项目中functions目录是友情提供的，可以从上图的Import直接导入
+
 ![x](./images/DeployFunction.png)
