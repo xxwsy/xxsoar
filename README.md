@@ -50,3 +50,7 @@ docker-compose -f xxsoar.yml up -d
 ```
 http://localhost:8000
 ```
+
+### 如何开始创建自己的组件
+[开启自己的部署组件之旅](./README_serverless.md)
+
