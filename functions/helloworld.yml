@@ -1,0 +1,26 @@
+metadata:
+  name: helloworld
+  labels:
+    nuclio.io/project-name: default
+spec:
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources: {}
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIOS9oOWlvQ0KICAgIGlucHV0Oui+k+WFpQ0KICAgICIiIg0KICAgIGNvbnRleHQubG9nZ2VyLmRlYnVnKGV2ZWdefaultLmJvZHkpDQogICAgcmV0dXJuICJoZWxsbyB7fSIuZm9ybWF0KGV2ZWdefaultLmJvZHkuZ2V0KCJpbnB1dCIsICJ3b3JsZCIpKQ==
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1655366152
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1

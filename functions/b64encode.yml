@@ -1,0 +1,26 @@
+metadata:
+  name: b64encode
+  labels:
+    nuclio.io/project-name: "default"
+spec:
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources: {}
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: aW1wb3J0IGJhc2U2NA0KDQpkZWYgaGFuZGxlcihjb2defaultZXh0LCBldmVudCk6DQogICAgIiIiDQogICAgYjY0ZW5jb2RlDQogICAgaW5wdXQ6IOi+k+WFpQ0KICAgICIiIg0KDQogICAgYm9keSA9IGV2ZWdefaultLmJvZHkuZ2V0KCJpbnB1dCIpDQogICAgZGF0YSA9IGJhc2U2NC5iNjRlbmNvZGUoInh4Ii5lbmNvZGUoKSkuZGVjb2RlKCkNCg0KICAgIHJldHVybiBkYXRh
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1656411default3
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1

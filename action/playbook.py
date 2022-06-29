@@ -293,7 +293,10 @@ class ComponentsHandler(LoginedRequestHandler):
             functions[project_name]["children"].append({"label": label, "renderKey": "DND_NDOE", "function": function_name, "externalInvocationUrls": externalInvocationUrls, "args": args})
 
         default = functions.pop("default", None) or functions.pop("默认", None)
-        self.write(dict(status = True, data = [default] + list(functions.values())))
+        if not default:
+            self.write(dict(status = True, data = list(functions.values())))
+        else:
+            self.write(dict(status = True, data = [default] + list(functions.values())))
         return
 
         #resp = requests.get("{}/functions".format("http://127.0.0.1:8080"), headers = HEADERS)
