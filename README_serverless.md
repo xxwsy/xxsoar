@@ -11,7 +11,7 @@ http:/localhost:8070
 - 3. 选择Runtime
 - 4. CREATE
 
-![x](https://github.com/xxwsy/xxsoar/blob/master/images/CreateFunction.png)
+![x](./images/CreateFunction.png)
 
 3. 进入如下页面
 - 1. Source code 区域编写代码，请注意注释格式，第一行为xxsoar中显示的组件名称，第二行开始是xxsoar编排过程中的参数
@@ -27,4 +27,4 @@ http:/localhost:8070
 - 4. OK，可以开始进入xxsoar之旅
 - 5. 福利，项目中functions目录是友情提供的，可以从上图的Import直接导入
 
-![x](https://github.com/xxwsy/xxsoar/blob/master/images/DeployFunction.png)
+![x](./images/DeployFunction.png)
