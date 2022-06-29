@@ -38,12 +38,12 @@
 ### serverless 服务
 
 ```
-docker run -p 8070:8070 -v /tmp:/tmp --name nuclio-dashboard quay.io/nuclio/dashboard:stable-amd64
+ docker pull alpine:3.15
+ docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
+ docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp --name nuclio-dashboard quay.io/nuclio/dashboard:stable-amd64
 ```
-- [Getting Started with Nuclio on Kubernetes](/docs/setup/k8s/getting-started-k8s.md)
-- [Getting Started with Nuclio on Google Kubernetes Engine (GKE)](/docs/setup/gke/getting-started-gke.md)
-- [Getting started with Nuclio on Azure Container Services (AKS)](/docs/setup/aks/getting-started-aks.md)
-- [Hands-on live Kubernetes sandbox and guiding instructions for Nuclio, free on Katacoda](https://katacoda.com/javajon/courses/kubernetes-serverless/nuclio)
+
+- [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
 
 ### xxsoar 服务配置(settings.py)
 
