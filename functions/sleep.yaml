@@ -1,0 +1,30 @@
+metadata:
+  name: sleep
+  labels:
+    nuclio.io/project-name: tools
+spec:
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  version: 1
+  build:
+    functionSourceCode: aW1wb3J0IHRpbWUNCg0KZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIHNsZWVwDQogICAgaW5wdXQ6IHNlY29uZHMocykNCiAgICAiIiINCiAgICBfaW5wdXQgPSBpbnQoZXZlbnQuYm9keS5nZXQoImlucHV0Iikgb3IgMCkNCiAgICB0aW1lLnNsZWVwKF9pbnB1dCkNCiAgICByZXR1cm4gIm5pY2Ui
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1656496543
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  preemptionMode: none

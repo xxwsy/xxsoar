@@ -5,7 +5,10 @@ metadata:
 spec:
   handler: "main:handler"
   runtime: "python:3.7"
-  resources: {}
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
   triggers:
     default-http:
       class: ""
@@ -13,11 +16,11 @@ spec:
       name: default-http
       maxWorkers: 1
   build:
-    functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIOS9oOWlvQ0KICAgIGlucHV0Oui+k+WFpQ0KICAgICIiIg0KICAgIGNvbnRleHQubG9nZ2VyLmRlYnVnKGV2ZWdefaultLmJvZHkpDQogICAgcmV0dXJuICJoZWxsbyB7fSIuZm9ybWF0KGV2ZWdefaultLmJvZHkuZ2V0KCJpbnB1dCIsICJ3b3JsZCIpKQ==
+    functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIGhlbGxvd29ybGQNCiAgICBpbnB1dDrovpPlhaUNCiAgICAiIiINCiAgICBhcmcgPSBldmVudC5ib2R5LmdldCgiaW5wdXQiKQ0KDQogICAgcmV0dXJuICJ7fTogaGVsbG93b3JsZCIuZm9ybWF0KGFyZyk=
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1655366152
+    timestamp: 1656490040
   loggerSinks:
     - level: debug
   platform: {}
