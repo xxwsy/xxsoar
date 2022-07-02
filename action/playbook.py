@@ -5,8 +5,6 @@ import json
 import uuid
 import time
 import base64
-import jsonpath
-from jsonpath_rw import jsonpath, parse
 import threading
 import multiprocessing
 import requests
