@@ -23,8 +23,6 @@ services:
   backend:
     build: "./"
     restart: always
-    ports:
-     - "8000:8000"
     network_mode: host
     volumes:
      - .:/app

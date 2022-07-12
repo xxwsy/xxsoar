@@ -264,7 +264,7 @@ class ComponentsHandler(LoginedRequestHandler):
         _projects = _projects.json()
         projects = {}
         for k, v in _projects.items():
-            projects[k] = v["spec"]["description"]
+            projects[k] = v["spec"].get("description") or k
 
         resp = requests.get("{}/api/functions".format(__conf__.FAAS_HOST), headers = HEADERS)
 
@@ -280,6 +280,7 @@ class ComponentsHandler(LoginedRequestHandler):
 
             code = v["spec"]["build"]["functionSourceCode"]
             code = base64.b64decode(code).decode()
+            if '"""' not in code: continue
             doc = code[code.index('"""')+3: code.rindex('"""')].strip().split("\r\n")
             label = doc[0]
             args = []
