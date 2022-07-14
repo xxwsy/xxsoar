@@ -14,14 +14,14 @@ class TaskList(LoginedRequestHandler):
     def get(self):
         search = self.get_argument('search', None)
         playbook_id = self.get_argument('playbook_id', None)
-        page_index = int(self.get_argument('page_index', 1))
-        page_size = int(self.get_argument('page_size', 10))
+        page_index = int(self.get_argument('current', 1))
+        page_size = int(self.get_argument('pageSize', 10))
 
         sort = self.get_argument('sort', None)
         # 方向 desc
         direction = self.get_argument('direction', '')
 
-        cond = {"uid": self.uid}
+        cond = {}
         if playbook_id:
             cond["playbook_id"] = playbook_id
 
@@ -49,9 +49,7 @@ class TaskList(LoginedRequestHandler):
                 except:
                     pass
 
-        self.write(dict(page_index = page_index, \
-                            total = total, \
-                            result = results))
+        self.write(dict(total = total, data = results))
 
 
 from tornado import gen

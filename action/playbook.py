@@ -229,6 +229,9 @@ class PlayBook(LoginedRequestHandler):
         page_size = self.get_argument("pageSize", 10)
 
         data, page = MongoIns().m_list("playbook", page_index = page_index, page_size = page_size)
+        for item in data:
+            item["exec_count"] = MongoIns().m_count("task", playbook_id = item["_id"])
+
 
         self.write(dict(status = True, data = data, total = page.get("allcount")))
 
