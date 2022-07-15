@@ -1,7 +1,7 @@
 supervisor
 tornado
 redis
-pymongo==2.8
+pymongo==3.6
 requests
 networkx
 apscheduler
