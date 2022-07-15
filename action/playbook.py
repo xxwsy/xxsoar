@@ -1,6 +1,7 @@
 #!coding=utf-8
 import re
 import os
+import yaml
 import json
 import uuid
 import time
@@ -275,6 +276,7 @@ class ComponentsHandler(LoginedRequestHandler):
         data = resp.json()
 
         for function_name, v in data.items():
+            if v["status"].get("state") != "ready": continue
             project_name = v["metadata"]["labels"]["nuclio.io/project-name"]
             project_name = projects.get(project_name) or project_name
 
@@ -301,16 +303,6 @@ class ComponentsHandler(LoginedRequestHandler):
             self.write(dict(status = True, data = [default] + list(functions.values())))
         return
 
-        #resp = requests.get("{}/functions".format("http://127.0.0.1:8080"), headers = HEADERS)
-        #functions = resp.json()
-        #for item in functions.values():
-        #    item["header"] = item.pop("label", None)
-        #    for func in item["children"]:
-        #        func["renderKey"] = "DND_NDOE"
-        #        func["function"] = func.pop("id")
-
-
-        #self.write(dict(status = True, data = list(functions.values())))
 
 @url(r"/playbook/run", order = -1, needcheck = False, category = "PlayBook")
 class PlayBookRun(LoginedRequestHandler):
@@ -347,4 +339,29 @@ class NodeID(LoginedRequestHandler):
 
         self.write(dict(status = True, _id = str(i)))
         return
+
+@url(r"/store", order = -1, needcheck = False, category = "PlayBook")
+class StoreHandler(LoginedRequestHandler):
+    """
+        获取应用
+    """
+    def get(self):
+
+        resp = requests.get("{}/api/functions".format(__conf__.FAAS_HOST), headers = HEADERS)
+        functions = {}
+        _data = resp.json()
+
+        keys = _data.keys()
+        data = list(_data.values())
+
+        local_functions = os.listdir("functions")
+        for func in local_functions:
+            with open("./functions/{}".format(func), "r") as f:
+                res = yaml.load(stream=f, Loader = yaml.FullLoader)
+
+            if res['metadata'].get('name') in keys: continue
+            res["status"] = {}
+            data.append(res)
+
+        self.write(dict(total=len(data), data = data))
 
