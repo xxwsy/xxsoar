@@ -293,8 +293,7 @@ class ComponentsHandler(LoginedRequestHandler):
                 arg = arg.strip()
                 args.append({"name": arg.split(":")[0], "label": arg.split(":")[1], "type": "text"})
 
-            externalInvocationUrls = v["status"]["externalInvocationUrls"]
-            functions[project_name]["children"].append({"label": label, "renderKey": "DND_NDOE", "function": function_name, "externalInvocationUrls": externalInvocationUrls, "args": args})
+            functions[project_name]["children"].append({"label": label, "renderKey": "DND_NDOE", "function": function_name, "args": args})
 
         default = functions.pop("default", None) or functions.pop("默认", None)
         if not default:
@@ -346,6 +345,9 @@ class StoreHandler(LoginedRequestHandler):
         获取应用
     """
     def get(self):
+        args_function = self.get_argument("function", None)
+        args_project = self.get_argument("project", None)
+        args_state = self.get_argument("state", None)
 
         resp = requests.get("{}/api/functions".format(__conf__.FAAS_HOST), headers = HEADERS)
         functions = {}
@@ -360,8 +362,49 @@ class StoreHandler(LoginedRequestHandler):
                 res = yaml.load(stream=f, Loader = yaml.FullLoader)
 
             if res['metadata'].get('name') in keys: continue
-            res["status"] = {}
+            res["status"] = {"state": ""}
             data.append(res)
 
-        self.write(dict(total=len(data), data = data))
+        for item in data:
+            item["href"] = "{}/projects/{}/functions/{}/code".format(__conf__.FAAS_HOST, item["metadata"]["labels"]["nuclio.io/project-name"], item["metadata"]["name"])
+
+            if item["spec"].get("disable") == True:
+                item["status"]["state"] = "Standby"
+
+        data = sorted(data, key=lambda k: k["metadata"]["name"])
+        if args_function:
+            data = [item for item in data if args_function in item["metadata"]["name"]]
+        if args_project:
+            data = [item for item in data if args_project in item["metadata"]["labels"]["nuclio.io/project-name"]]
+        if args_state:
+            data = [item for item in data if args_state == item["status"]["state"]]
+
+        self.write(dict(total=len(data), data = data, faas_host = __conf__.FAAS_HOST))
+
+
+@url(r"/function/deploy", order = -1, needcheck = False, category = "PlayBook")
+class FunctionDeployHandler(LoginedRequestHandler):
+    """
+        Deploy Function
+    """
+    def post(self):
+        params = self.args
+
+        resp_projects = requests.get("{}/api/projects".format(__conf__.FAAS_HOST), headers = HEADERS)
+        projects = resp_projects.json()
+
+        project_name = self.args["metadata"]["labels"]["nuclio.io/project-name"]
+        if project_name not in projects:
+            project = {"metadata":{"name": project_name, "namespace":"nuclio"},"spec":{"description":""}}
+            requests.post("{}/api/projects".format(__conf__.FAAS_HOST), json=project, headers = HEADERS)
+
+        headers = {"Content-type": "application/json", 
+                   "x-nuclio-project-name": project_name,
+                   "x-nuclio-function-namespace": "nuclio",
+                  }
+
+        params.pop("status", None)
+        resp = requests.post("{}{}".format(FAAS_HOST, "/api/functions"), json = params, headers = headers)
+
+        self.write(dict(status = True))
 
