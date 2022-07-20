@@ -1,0 +1,32 @@
+metadata:
+  name: ipinfo
+  labels:
+    nuclio.io/project-name: tools
+spec:
+  handler: "main:handler"
+  runtime: "python:3.9"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: aW1wb3J0IGdlb2lwMi5kYXRhYmFzZQ0KDQpyZWFkZXIgPSBnZW9pcDIuZGF0YWJhc2UuUmVhZGVyKCcvYXBwL0dlb0lQMi1DaXR5Lm1tZGInKQ0KDQpkZWYgaGFuZGxlcihjb250ZXh0LCBldmVudCk6DQogICAgIiIiDQogICAgSVDkv6Hmga8NCiAgICBpcDogSVDlnLDlnYANCiAgICAiIiINCiAgICBpcCA9IGV2ZW50LmJvZHkuZ2V0KCJpcCIsICIiKQ0KDQogICAgcmVzdWx0ID0geyJjb3VudHJ5X25hbWUiOiAiIiwgImNpdHlfbmFtZSI6ICIifQ0KICAgIHRyeToNCiAgICAgICAgcmVzcG9uc2UgPSByZWFkZXIuY2l0eShpcCkNCiAgICAgICAgcmVzdWx0WyJjb3VudHJ5X25hbWUiXSA9IHJlc3BvbnNlLmNvdW50cnkubmFtZXNbJ3poLUNOJ10NCiAgICAgICAgcmVzdWx0WyJjaXR5X25hbWUiXSA9IHJlc3BvbnNlLmNpdHkubmFtZXNbJ3poLUNOJ10NCiAgICBleGNlcHQ6DQogICAgICAgIHBhc3MNCg0KICAgIHJldHVybiByZXN1bHQNCg0K
+    baseImage: xxwsy/python3.9-ipinfo
+    commands:
+      - 'pip install geoip2'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658299553
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
