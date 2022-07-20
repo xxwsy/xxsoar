@@ -1,0 +1,31 @@
+metadata:
+  name: output-elasticsearch
+  labels:
+    nuclio.io/project-name: output
+spec:
+  handler: "main:handler"
+  runtime: "python:3.9"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: aW1wb3J0IGpzb24NCmltcG9ydCByZXF1ZXN0cw0KZnJvbSByZXF1ZXN0cy5hdXRoIGltcG9ydCBIVFRQQmFzaWNBdXRoDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICDlhpnlhaVlcw0KICAgIHNlcnZlcjrmnI3liqENCiAgICB1c2VyOui0puWPtw0KICAgIHBhc3N3b3JkOuWvhueggQ0KICAgIGluZGV4Oue0ouW8lQ0KICAgIGRhdGE65pWw5o2uZGljdA0KICAgICIiIg0KICAgIHNlcnZlciA9IGV2ZW50LmJvZHkuZ2V0KCJzZXJ2ZXIiKQ0KICAgIHVzZXIgPSBldmVudC5ib2R5LmdldCgidXNlciIpDQogICAgcGFzc3dvcmQgPSBldmVudC5ib2R5LmdldCgicGFzc3dvcmQiKQ0KICAgIGluZGV4ID0gZXZlbnQuYm9keS5nZXQoImluZGV4IikNCiAgICBkYXRhID0gZXZlbnQuYm9keS5nZXQoImRhdGEiKQ0KDQoNCiAgICBpZiB1c2VyIGFuZCBfcGFzczoNCiAgICAgICAgYXV0aCA9IEhUVFBCYXNpY0F1dGgodXNlcixfcGFzcykNCiAgICBlbHNlOg0KICAgICAgICBhdXRoID0gTm9uZQ0KICAgIA0KICAgIGlmIGlzaW5zdGFuY2UoZGF0YSwgZGljdCk6DQogICAgICAgIGRhdGFbJ0B0aW1lc3RhbXAnXSA9IGRhdGV0aW1lLmRhdGV0aW1lLnV0Y25vdygpLmlzb2Zvcm1hdCgpDQogICAgICAgIGRhdGEgPSBqc29uLmR1bXBzKGRhdGEpDQoNCiAgICB1cmwgPSAne30ve30vZG9jJy5mb3JtYXQoc2VydmVyLCBpbmRleCkNCiAgICByID0gcmVxdWVzdHMucG9zdCh1cmw9dXJsLGhlYWRlcnM9eydDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbid9LCBkYXRhPWRhdGEsIGF1dGg9YXV0aCkNCiAgICBkYXRhID0gci5qc29uKCkNCg0KICAgIHJldHVybiBkYXRhDQoNCg0KDQo=
+    commands:
+      - 'pip install requests'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658295628
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
