@@ -1,0 +1,31 @@
+metadata:
+  name: datasource-elasticsearch
+  labels:
+    nuclio.io/project-name: datasource
+spec:
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: DQppbXBvcnQganNvbg0KaW1wb3J0IHJlcXVlc3RzDQpmcm9tIHJlcXVlc3RzLmF1dGggaW1wb3J0IEhUVFBCYXNpY0F1dGgNCg0KZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIGVsYXN0aWNzZWFyY2jmn6Xor6INCiAgICBzZXJ2ZXI65pyN5YqhDQogICAgdXNlcjrotKblj7cNCiAgICBwYXNzd29yZDrlr4bnoIENCiAgICBpbmRleDrntKLlvJUNCiAgICBjb25kOlF1ZXJ5IERTTA0KICAgICIiIg0KICAgIHNlcnZlciA9IGV2ZW50LmJvZHkuZ2V0KCJzZXJ2ZXIiKQ0KICAgIHVzZXIgPSBldmVudC5ib2R5LmdldCgidXNlciIpDQogICAgcGFzc3dvcmQgPSBldmVudC5ib2R5LmdldCgicGFzc3dvcmQiKQ0KICAgIGluZGV4ID0gZXZlbnQuYm9keS5nZXQoImluZGV4IikNCiAgICBjb25kID0gZXZlbnQuYm9keS5nZXQoImNvbmQiKQ0KDQogICAgaWYgdXNlciBhbmQgcGFzc3dvcmQ6DQogICAgICAgIGF1dGggPSBIVFRQQmFzaWNBdXRoKHVzZXIscGFzc3dvcmQpDQogICAgZWxzZToNCiAgICAgICAgYXV0aCA9IE5vbmUNCg0KICAgIGlmIGlzaW5zdGFuY2UoY29uZCwgZGljdCk6DQogICAgICAgIGNvbmQgPSBqc29uLmR1bXBzKGNvbmQpDQoNCiAgICBzY3JvbGxfaWQgPSBOb25lDQogICAgc2l6ZSA9IDEwMDAwDQoNCiAgICByZXN1bHQgPSBbXQ0KICAgIHdoaWxlIHNpemUgPT0gMTAwMDA6DQogICAgICAgIGlmIG5vdCBzY3JvbGxfaWQ6DQogICAgICAgICAgICB1cmwgPSAne30ve30vX3NlYXJjaD9zY3JvbGw9MW0nLmZvcm1hdChzZXJ2ZXIsIGluZGV4KQ0KICAgICAgICAgICAgciA9IHJlcXVlc3RzLmdldCh1cmw9dXJsLGhlYWRlcnM9eydDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbid9LGRhdGE9Y29uZCwgYXV0aCA9IGF1dGgpDQogICAgICAgIGVsc2U6DQogICAgICAgICAgICB1cmwgPSAne30vX3NlYXJjaC9zY3JvbGwnLmZvcm1hdChzZXJ2ZXIpDQogICAgICAgICAgICBhcmdzID0geyJzY3JvbGwiOiAiMW0iLCAic2Nyb2xsX2lkIjogc2Nyb2xsX2lkfQ0KICAgICAgICAgICAgciA9IHJlcXVlc3RzLnBvc3QodXJsPXVybCwganNvbiA9IGFyZ3MsIGhlYWRlcnM9eydDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbid9LCBhdXRoID0gYXV0aCkNCiAgICAgICAgZGF0YSA9IHIuanNvbigpDQogICAgICAgIHNjcm9sbF9pZCA9IGRhdGEuZ2V0KCJfc2Nyb2xsX2lkIikNCg0KICAgICAgICBkYXRhID0gZGF0YS5nZXQoJ2hpdHMnLCB7fSkuZ2V0KCdoaXRzJywgW10pDQogICAgICAgIHNpemUgPSBsZW4oZGF0YSkNCiAgICAgICAgcmVzdWx0LmV4dGVuZChkYXRhKQ0KDQogICAgcmV0dXJuIHJlc3VsdA0K
+    commands:
+      - 'pip install requests'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658286693
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
