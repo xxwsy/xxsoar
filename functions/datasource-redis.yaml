@@ -1,0 +1,32 @@
+metadata:
+  name: datasource-redis
+  labels:
+    nuclio.io/project-name: datasource
+spec:
+  description: "单机Reids队列中取数据， REDIS_URL: redis://user:password@host:port/0"
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: ZnJvbSByZWRpcyBpbXBvcnQgUmVkaXMNCg0KbXEgPSBOb25lDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICBSZWRpc+a2iOi0uQ0KICAgIHJlZGlzX3VybDpSRURJU19VUkwNCiAgICBjaGFubmVsOkNIQU5ORUwNCiAgICAiIiINCiAgICBnbG9iYWwgbXENCiAgICByZWRpc191cmwgPSBldmVudC5ib2R5LmdldCgicmVkaXNfdXJsIikNCiAgICBjaGFubmVsID0gZXZlbnQuYm9keS5nZXQoImNoYW5uZWwiKQ0KDQogICAgaWYgbm90IG1xOg0KICAgICAgICBtcSA9IFJlZGlzLmZyb21fdXJsKHJlZGlzX3VybCkNCg0KICAgIGxsZW4gPSBtaW4oMTAwMDAsIG1xLmxsZW4oY2hhbm5lbCkpDQogICAgZGF0YSA9IG1xLmxyYW5nZShjaGFubmVsLCAwLCBsbGVuIC0gMSkNCiAgICBkYXRhID0gW2l0ZW0uZGVjb2RlKCkgZm9yIGl0ZW0gaW4gZGF0YV0NCiAgICBtcS5sdHJpbShjaGFubmVsLCBsbGVuLCAtMSkNCg0KICAgIGRhdGEgPSBkaWN0KGxsZW4gPSBsbGVuLCBkYXRhID0gZGF0YSkNCg0KICAgIHJldHVybiBkYXRhDQogICAg
+    commands:
+      - 'pip install redis'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658461188
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
