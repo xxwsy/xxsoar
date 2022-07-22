@@ -8,5 +8,5 @@ DB_NAME = 'local'
 Redis_URL = 'redis://:xsoaristhebestidea@127.0.0.1:6379/0'
 
 # serverless 配置
-FAAS_HOST = "http://127.0.0.1:8070"
+FAAS_HOST = "http://42.192.75.11:8070"
 
