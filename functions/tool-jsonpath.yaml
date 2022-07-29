@@ -16,17 +16,17 @@ spec:
       kind: http
       name: default-http
       maxWorkers: 1
+  version: 1
   build:
-    functionSourceCode: ZnJvbSBqc29ucGF0aF9ydyBpbXBvcnQganNvbnBhdGgsIHBhcnNlDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICBKU09O5pWw5o2u5o+Q5Y+WDQogICAgZGF0YTpkYXRhDQogICAgZXhwcjpleHByDQogICAgIiIiDQogICAgZGF0YSA9IGV2ZW50LmJvZHkuZ2V0KCJkYXRhIikNCiAgICBleHByID0gZXZlbnQuYm9keS5nZXQoImV4cHIiKQ0KDQogICAganNvbnBhdGhfZXhwciA9IHBhcnNlKGV4cHIpDQogICAgcmVzdWx0ID0ganNvbnBhdGhfZXhwci5maW5kKGRhdGEpDQogICAgaWYgcmVzdWx0Og0KICAgICAgICByZXN1bHQgPSByZXN1bHRbMF0udmFsdWUoKQ0KICAgIHJldHVybiByZXN1bHQ=
+    functionSourceCode: ZnJvbSBqc29ucGF0aF9ydyBpbXBvcnQganNvbnBhdGgsIHBhcnNlDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICBKU09O5pWw5o2u5o+Q5Y+WDQogICAgZGF0YTpkYXRhDQogICAgZXhwcjpleHByDQogICAgIiIiDQogICAgZGF0YSA9IGV2ZW50LmJvZHkuZ2V0KCJkYXRhIikNCiAgICBleHByID0gZXZlbnQuYm9keS5nZXQoImV4cHIiKQ0KDQogICAganNvbnBhdGhfZXhwciA9IHBhcnNlKGV4cHIpDQogICAgcmVzdWx0ID0ganNvbnBhdGhfZXhwci5maW5kKGRhdGEpDQogICAgaWYgcmVzdWx0Og0KICAgICAgICByZXN1bHQgPSByZXN1bHRbMF0udmFsdWUNCiAgICByZXR1cm4gcmVzdWx0
     commands:
       - 'pip install jsonpath-rw'
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1659083322
+    timestamp: 1659087976
   loggerSinks:
     - level: debug
   platform: {}
   securityContext: {}
   eventTimeout: ""
-  version: 1
