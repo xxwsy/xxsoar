@@ -1,0 +1,29 @@
+metadata:
+  name: merge-dict
+  labels:
+    nuclio.io/project-name: tools
+spec:
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIOWQiOW5tuWtl+WFuA0KICAgIGlucHV0MTpkaWN0MQ0KICAgIGlucHV0MjpkaWN0Mg0KICAgICIiIg0KDQogICAgaW5wdXQxID0gZXZlbnQuYm9keS5nZXQoImlucHV0MSIpDQogICAgaW5wdXQyID0gZXZlbnQuYm9keS5nZXQoImlucHV0MiIpDQoNCiAgICBpZiBub3QgaXNpbnN0YW5jZShpbnB1dDEsIGRpY3QpOg0KICAgICAgICBpbnB1dDEgPSBqc29uLmxvYWRzKGlucHV0MSkNCg0KICAgIGlmIG5vdCBpc2luc3RhbmNlKGlucHV0MiwgZGljdCk6DQogICAgICAgIGlucHV0MiA9IGpzb24ubG9hZHMoaW5wdXQyKQ0KDQogICAgaW5wdXQxLnVwZGF0ZShpbnB1dDIpDQogICAgDQogICAgcmV0dXJuIGlucHV0MQ==
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658486346
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1

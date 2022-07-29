@@ -1,0 +1,32 @@
+metadata:
+  name: security-virscan
+  labels:
+    nuclio.io/project-name: security
+spec:
+  description: "VirScan 恶意文件检测平台，保护我们的文件安全文件黑白，一扫便知"
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: aW1wb3J0IHRpbWUNCmltcG9ydCByZXF1ZXN0cw0KDQpkZWYgaGFuZGxlcihjb250ZXh0LCBldmVudCk6DQogICAgIiIiDQogICAg5oG25oSP5paH5Lu25qOA5rWLDQogICAgYXBpa2V5OmFwaWtleQ0KICAgIHNoYTI1NjpzaGEyNTYNCiAgICB1cmw6ZG93bmxvYWQgYWRkcmVzcyhodHRwKQ0KICAgICIiIg0KICAgIGFwaWtleSA9IGV2ZW50LmJvZHkuZ2V0KCJhcGlrZXkiKQ0KICAgIGlucHV0X3NoYTI1NiA9IGV2ZW50LmJvZHkuZ2V0KCJzaGEyNTYiKQ0KICAgIHVybCA9IGV2ZW50LmJvZHkuZ2V0KCJ1cmwiKQ0KDQogICAgaGVhZGVycyA9IHsnWC1BUEktS2V5JzogYXBpa2V5fQ0KICAgIGlmIGlucHV0X3NoYTI1NjoNCiAgICAgICAgcmVzcCA9IHJlcXVlc3RzLmdldCgiaHR0cHM6Ly9hcGkudmlyc2Nhbi5vcmcvdjEvZmlsZS9zaGEyNTYve30iLmZvcm1hdChpbnB1dF9zaGEyNTYpLCBoZWFkZXJzID0gaGVhZGVycykNCiAgICAgICAgcmV0dXJuIHJlc3AuanNvbigpDQogICAgZWxpZiB1cmw6DQogICAgICAgIHJlc3AgPSByZXF1ZXN0cy5nZXQodXJsKQ0KICAgICAgICBmaWxlbmFtZSA9IHVybC5zcGxpdCgiLyIpWy0xXQ0KICAgICAgICBkYXRhID0gcmVzcC5jb250ZW50DQogICAgICAgIF9zaXplID0gbGVuKGRhdGEpDQogICAgICAgIA0KICAgICAgICByZXNwID0gcmVxdWVzdHMucG9zdCgiaHR0cHM6Ly9hcGkudmlyc2Nhbi5vcmcvdjEvZmlsZS9jb250ZW50L3Jhdz9maWxlbmFtZT17fSZ0PXt9JnNpemU9e30iLmZvcm1hdChmaWxlbmFtZSwgdGltZS50aW1lLCBfc2l6ZSksIGRhdGEgPSBkYXRhLCBoZWFkZXJzID0gaGVhZGVycykNCg0KICAgICAgICByZXR1cm4geyJzdGF0dXNfY29kZSI6IHJlc3Auc3RhdHVzX2NvZGUsICJ0ZXh0IjogcmVzcC50ZXh0fQ0KDQoNCg==
+    commands:
+      - 'pip install requests'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1658823820
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
