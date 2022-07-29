@@ -1,0 +1,32 @@
+metadata:
+  name: security-threatbook-domain
+  labels:
+    nuclio.io/project-name: security
+spec:
+  description: "@微步在线  https://x.threatbook.com/v5/apiDocs        可针对从内部 DNS 或某些 NGFW 中提取的域名进行分析。获取域名对应的IP地址，当前Whois，综合判定威胁类型如:远控（C2）、恶意软件（Malware）、傀儡机（Zombie）、扫描（Scanner）、暴力破解（Brute Force）等，相关攻击团伙或安全事件标签，原始情报，相关样本信息等。"
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: aW1wb3J0IHJlcXVlc3RzDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICDln5/lkI3liIbmnpANCiAgICBhcGlrZXk6IOW+ruatpWFwaWtleQ0KICAgIHJlc291cmNlOuWfn+WQjQ0KICAgICIiIg0KICAgIGFwaWtleSA9IGV2ZW50LmJvZHkuZ2V0KCJhcGlrZXkiKQ0KICAgIHJlc291cmNlID0gZXZlbnQuYm9keS5nZXQoInJlc291cmNlIikNCg0KICAgIHVybCA9ICJodHRwczovL2FwaS50aHJlYXRib29rLmNuL3YzL2RvbWFpbi9xdWVyeSINCg0KICAgIHJlc3VsdCA9IFtdDQogICAgZm9yIGRvbWFpbiBpbiByZXNvdXJjZToNCiAgICAgICAgcXVlcnkgPSB7DQogICAgICAgICAgICAiYXBpa2V5IjphcGlrZXksDQogICAgICAgICAgICAicmVzb3VyY2UiOmRvbWFpbg0KICAgICAgICB9DQoNCiAgICAgICAgcmVzcG9uc2UgPSByZXF1ZXN0cy5yZXF1ZXN0KCJHRVQiLCB1cmwsIHBhcmFtcz1xdWVyeSkNCg0KICAgICAgICByZXN1bHQuYXBwZW5kKHJlc3BvbnNlLmpzb24oKSkNCg0KICAgIHJldHVybiByZXN1bHQ=
+    commands:
+      - 'pip install requests'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1659090376
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1
