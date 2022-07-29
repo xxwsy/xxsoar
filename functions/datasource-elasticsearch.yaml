@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: datasource
 spec:
+  description: 数据源，从elasticsearch中查询数据
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -22,7 +23,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1658286693
+    timestamp: 1659077049
   loggerSinks:
     - level: debug
   platform: {}

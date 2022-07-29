@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: tools
 spec:
+  description: base64解码
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -21,7 +22,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1658225855
+    timestamp: 1659076854
   loggerSinks:
     - level: debug
   platform: {}

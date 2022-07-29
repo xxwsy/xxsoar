@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: notify
 spec:
+  description: 发送邮件
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -20,7 +21,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1658284297
+    timestamp: 1659077097
   loggerSinks:
     - level: debug
   platform: {}

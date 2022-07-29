@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: tools
 spec:
+  description: 输入两个字典进行合并，输出合并之后的字典
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -20,7 +21,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1658486346
+    timestamp: 1659076951
   loggerSinks:
     - level: debug
   platform: {}

@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: default
 spec:
+  description: "Hello World 函数"
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -15,15 +16,15 @@ spec:
       kind: http
       name: default-http
       maxWorkers: 1
+  version: 1
   build:
     functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIGhlbGxvd29ybGQNCiAgICBpbnB1dDrovpPlhaUNCiAgICAiIiINCiAgICBhcmcgPSBldmVudC5ib2R5LmdldCgiaW5wdXQiKQ0KDQogICAgcmV0dXJuICJ7fTogaGVsbG93b3JsZCIuZm9ybWF0KGFyZyk=
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1656490040
+    timestamp: 1659077074
   loggerSinks:
     - level: debug
   platform: {}
   securityContext: {}
   eventTimeout: ""
-  version: 1

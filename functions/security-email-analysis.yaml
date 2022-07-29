@@ -1,0 +1,30 @@
+metadata:
+  name: security-email-analysis
+  labels:
+    nuclio.io/project-name: security
+spec:
+  description: 邮件分析，提取url，文件，文件内容，域名信息
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: ZGVmIGhhbmRsZXIoY29udGV4dCwgZXZlbnQpOg0KICAgICIiIg0KICAgIOmCruS7tuWIhuaekOaPkOWPlg0KICAgIGlucHV0OmlucHV0DQogICAgIiIiDQogICAgZGF0YSA9IGV2ZW50LmJvZHkuZ2V0KCJpbnB1dCIpDQoNCiAgICByZXN1bHQgPSBkaWN0KHVybCA9IFtdLCBmaWxlcyA9IFtdLCB0ZXh0ID0gIiIsIGRvbWFpbnMgPSBbXSkNCiAgICByZXR1cm4gcmVzdWx0
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1659081439
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1

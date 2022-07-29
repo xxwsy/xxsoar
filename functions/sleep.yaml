@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: tools
 spec:
+  description: 睡眠函数，输入睡眠时长（秒）
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -21,7 +22,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1656496543
+    timestamp: 1659077008
   loggerSinks:
     - level: debug
   platform: {}

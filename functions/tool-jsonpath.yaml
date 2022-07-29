@@ -1,0 +1,32 @@
+metadata:
+  name: tool-jsonpath
+  labels:
+    nuclio.io/project-name: tools
+spec:
+  description: "提取json文档数据 参考文档 https://pypi.org/project/jsonpath-rw/"
+  handler: "main:handler"
+  runtime: "python:3.7"
+  resources:
+    requests:
+      cpu: 25m
+      memory: 1Mi
+  triggers:
+    default-http:
+      class: ""
+      kind: http
+      name: default-http
+      maxWorkers: 1
+  build:
+    functionSourceCode: ZnJvbSBqc29ucGF0aF9ydyBpbXBvcnQganNvbnBhdGgsIHBhcnNlDQoNCmRlZiBoYW5kbGVyKGNvbnRleHQsIGV2ZW50KToNCiAgICAiIiINCiAgICBKU09O5pWw5o2u5o+Q5Y+WDQogICAgZGF0YTpkYXRhDQogICAgZXhwcjpleHByDQogICAgIiIiDQogICAgZGF0YSA9IGV2ZW50LmJvZHkuZ2V0KCJkYXRhIikNCiAgICBleHByID0gZXZlbnQuYm9keS5nZXQoImV4cHIiKQ0KDQogICAganNvbnBhdGhfZXhwciA9IHBhcnNlKGV4cHIpDQogICAgcmVzdWx0ID0ganNvbnBhdGhfZXhwci5maW5kKGRhdGEpDQogICAgaWYgcmVzdWx0Og0KICAgICAgICByZXN1bHQgPSByZXN1bHRbMF0udmFsdWUoKQ0KICAgIHJldHVybiByZXN1bHQ=
+    commands:
+      - 'pip install jsonpath-rw'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+    timestamp: 1659083322
+  loggerSinks:
+    - level: debug
+  platform: {}
+  securityContext: {}
+  eventTimeout: ""
+  version: 1

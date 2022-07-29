@@ -3,6 +3,7 @@ metadata:
   labels:
     nuclio.io/project-name: tools
 spec:
+  description: 合并两个数组
   handler: "main:handler"
   runtime: "python:3.7"
   resources:
@@ -20,7 +21,7 @@ spec:
     runtimeAttributes:
       repositories: []
     codeEntryType: sourceCode
-    timestamp: 1658486027
+    timestamp: 1659076972
   loggerSinks:
     - level: debug
   platform: {}
