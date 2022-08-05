@@ -54,3 +54,9 @@ http://localhost:8000
 ### 如何开始创建自己的组件
 [开启自己的部署组件之旅](./README_serverless.md)
 
+
+## 深入交流
+
+**如对此产品想深入了解** 或 **部署遇到问题的请加我微信进用户反馈群**
+
+<img src="./images/contactme.jpg" width="400">
