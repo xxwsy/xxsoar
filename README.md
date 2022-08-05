@@ -59,4 +59,4 @@ http://localhost:8000
 
 **如对此产品想深入了解** 或 **部署遇到问题的请加我微信进用户反馈群**
 
-<img src="./images/contactme.jpg" width="400">
+<img src="./images/contactme.jpg" width="200">
