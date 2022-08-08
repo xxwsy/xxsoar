@@ -4,6 +4,7 @@ services:
   mongo:
     image: mongo
     restart: always
+    hostname: xxsoar_mongo
     volumes:
      - /var/log/db:/data/db
     ports:
@@ -15,15 +16,26 @@ services:
   redis:
     image: "redis"
     restart: always
-    hostname: web_redis
+    hostname: xxsoar_redis
     command: redis-server --requirepass "xsoaristhebestidea"
     ports:
       - "6379:6379"
 
+  nuclio:
+    image: "xxwsy/nuclio"
+    restart: always
+    hostname: xxsoar_nuclio
+    ports:
+      - "8070:8070"
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+
   backend:
     image: "xxwsy/xxsoar"
     restart: always
-    network_mode: host
+    hostname: xxsoar
+    ports:
+      - "8000:8000"
     command:
      - sh
      - -c

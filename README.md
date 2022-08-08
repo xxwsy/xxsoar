@@ -32,19 +32,16 @@
 
 快速开始
 ```
- docker pull alpine:3.15
- docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
+ git clone https://github.com/xxwsy/xxsoar.git
+ cd xxsoar
+
+ docker pull alpine:3.15 && docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
+ docker-compose -f xxsoar.yml up -d
  
- docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock --name nuclio-dashboard xxwsy/nuclio:latest
 ```
 #### 推荐阅读
 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
 
-
-### 服务启动
-```
-docker-compose -f xxsoar.yml up -d
-```
 
 ### 访问地址
 ```
@@ -54,9 +51,3 @@ http://localhost:8000
 ### 如何开始创建自己的组件
 [开启自己的部署组件之旅](./README_serverless.md)
 
-
-## 深入交流
-
-**如对此产品想深入了解** 或 **部署遇到问题的请加我微信进用户反馈群**
-
-<img src="./images/contactme.jpg" width="200">
