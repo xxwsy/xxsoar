@@ -35,7 +35,7 @@
  docker pull alpine:3.15
  docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
  
- docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock --name nuclio-dashboard xxwsy/nuclio:latest
+ docker run --restart=always -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock --name nuclio-dashboard xxwsy/nuclio:latest
 ```
 #### 推荐阅读
 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
