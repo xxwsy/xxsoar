@@ -35,8 +35,7 @@
  git clone https://github.com/xxwsy/xxsoar.git
  cd xxsoar
 
- docker pull alpine:3.15 && docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
- docker-compose -f xxsoar.yml up -d
+ docker pull alpine:3.15 && docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15 && docker-compose -f xxsoar.yml up -d
 ```
 #### 推荐阅读
 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
