@@ -56,5 +56,5 @@ http://localhost:8000
  1. 丰富灵活的应用商店
 <img src="./images/store.png" />
 
- 2. 剧本
+ 2. 功能强大的编排（集成能力）
 <img src="./images/playbook_fishing.png" />
