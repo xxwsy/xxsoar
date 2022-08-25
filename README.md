@@ -1,6 +1,6 @@
-# xxsoar
+# 安全编排自动化与响应 (SOAR)
 
-## xxsoar 介绍
+## 安全编排自动化与响应 (SOAR) 介绍
 
 **xxsoar** 安全编排 是一种通过整合`安全工具`，`安全团队`和`安全基础设施`，而使安全运营和事件响应更为流畅的方法
 
@@ -52,3 +52,9 @@ http://localhost:8000
 ### 联系我们
 <img src="./images/contactme.jpg" width="200" height="200"/>
 
+### 平台预览
+ 1. 丰富灵活的应用商店
+<img src="./images/store.jpg" />
+
+ 2. 剧本
+<img src="./images/playbook_fishing.jpg" />
