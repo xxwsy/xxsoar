@@ -1,8 +1,8 @@
-# xxsoar
+# 安全编排自动化与响应 (SOAR)
 
-## xxsoar 介绍
+## 介绍
 
-**xxsoar** 安全编排 是一种通过整合`安全工具`，`安全团队`和`安全基础设施`，而使安全运营和事件响应更为流畅的方法
+**安全编排自动化与响应 (SOAR)** 安全编排 是一种通过整合`安全工具`，`安全团队`和`安全基础设施`，而使安全运营和事件响应更为流畅的方法
 
 #### 企业面临的实际问题（为什么我们需要它？）：
 
@@ -28,16 +28,17 @@
 
 ## 安装部署
 
-### serverless 服务 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
-
 快速开始
 ```
  git clone https://github.com/xxwsy/xxsoar.git
  cd xxsoar
 
- docker pull alpine:3.15 && docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15 && docker-compose -f xxsoar.yml up -d
+ docker pull alpine:3.15 && docker tag alpine:3.15 gcr.io/iguazio/alpine:3.15
+ 
+ docker-compose -f xxsoar.yml up -d
 ```
 #### 推荐阅读
+[# 安全编排自动化与响应 (SOAR)](https://github.com/xxwsy/xxsoar)
 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
 
 
@@ -49,3 +50,12 @@ http://localhost:8000
 ### 如何开始创建自己的组件
 [开启自己的部署组件之旅](./README_serverless.md)
 
+### 联系我们
+<img src="./images/contactme.jpg" width="200" height="200"/>
+
+### 平台预览
+ 1. 丰富灵活的应用商店
+<img src="./images/store.png" />
+
+ 2. 功能强大的编排（集成能力）
+<img src="./images/playbook_fishing.png" />
