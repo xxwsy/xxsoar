@@ -54,7 +54,7 @@ http://localhost:8000
 
 ### 平台预览
  1. 丰富灵活的应用商店
-<img src="./images/store.jpg" />
+<img src="./images/store.png" />
 
  2. 剧本
-<img src="./images/playbook_fishing.jpg" />
+<img src="./images/playbook_fishing.png" />
