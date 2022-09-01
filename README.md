@@ -52,7 +52,7 @@ http://localhost:8000
 [开启自己的部署组件之旅](./README_serverless.md)
 
 ### 联系我们
-<img src="./images/contactme.jpg" width="200" height="200"/>
+<img src="http://chenyue.tech/assets/img/contactme.jpg" width="200" height="200"/>
 
 ### 平台预览
  1. 丰富灵活的应用商店
