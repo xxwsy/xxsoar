@@ -42,6 +42,8 @@
 
 [# Nuclio - "Serverless" for Real-Time Events and Data Processing](https://github.com/nuclio/nuclio)
 
+[# 详细分步安装教程](./README_deploy.md)
+
 
 ### 访问地址
 ```
