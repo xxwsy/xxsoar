@@ -56,7 +56,7 @@ http://localhost:8000
 
 ### 平台预览
  1. 丰富灵活的应用商店
-<img src="./images/store.png" />
+<img src="http://chenyue.tech/assets/img/store.png" />
 
  2. 功能强大的编排（集成能力）
-<img src="./images/playbook_fishing.png" />
+<img src="http://chenyue.tech/assets/img/playbook_fishing.png" />
